@@ -1,3 +1,4 @@
+@extends('dashboard.layout')
 <form action="{{ route('categories.store') }}" method="POST">
     @csrf
 

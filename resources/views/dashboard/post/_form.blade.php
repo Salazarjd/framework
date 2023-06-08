@@ -1,3 +1,4 @@
+@extends('dashboard.layout')
 @csrf
 
 <div class="form-group">
