@@ -12,18 +12,18 @@ class WelcomeController extends Controller
             [
                 'title' => 'Slide 1',
                 'content' => 'Contenido del slide 1',
-                'image' => (asset('images/png/pngegg.png')),
+                'image' => (asset('images/png/origami2.png')),
             ],
             [
                 'title' => 'Slide 2',
                 'content' => 'Contenido del slide 2',
-                'image' => (asset('images/png/ronaldo.png')),
+                'image' => (asset('images/png/origami3.png')),
 
             ],
             [
                 'title' => 'Slide 3',
                 'content' => 'Contenido del slide 3',
-                'image' => (asset('images/png/stadium.png')),
+                'image' => (asset('images/png/origami4.png')),
 
             ],
             // Agrega más elementos de slide según sea necesario

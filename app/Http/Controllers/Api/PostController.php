@@ -1,21 +1,20 @@
 <?php
 
 namespace App\Http\Controllers\Api;
+
 use App\Models\Post;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\Post\StoreRequest;
-use App\Http\Requests\Post\PutRequest;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Cache;
+use App\Http\Requests\Post\PutRequest;
+use App\Http\Requests\Post\StoreRequest;
 
 class PostController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
 
-    public function all(){
-        return response()->json(Cache::remember('posts_all', now()->addMinutes(10), function(){
+    public function all()
+    {
+        return response()->json(Cache::remember('posts_all', now()->addMinutes(10), function () {
             return Post::all();
         }));
     }
@@ -59,3 +58,4 @@ class PostController extends Controller
         return response()->json('ok');
     }
 }
+
