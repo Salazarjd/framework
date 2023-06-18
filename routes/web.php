@@ -4,7 +4,7 @@ use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Application;
 use App\Http\Controllers\ProfileController;
-
+use App\Http\Controllers\web\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -44,6 +44,13 @@ Route::group(['prefix' => 'dashboard', 'middleware' => ['auth','admin']], functi
         'post' => App\Http\Controllers\Dashboard\PostController::class,
         'category' => App\Http\Controllers\Dashboard\CategoryController::class,
     ]);
+});
+
+Route::group(['prefix' => 'blog'], function () {
+    Route::controller(BlogController::class)->group(function(){
+        Route::get('/','index')->name('web.blog.index');
+        Route::get('/detail/{post}','show')->name('web.blog.index');
+    });
 });
 
 require __DIR__ . '/auth.php';
